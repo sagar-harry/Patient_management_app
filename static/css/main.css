@@ -1,0 +1,51 @@
+body, html {
+    margin: 1;
+    font-family: sans-serif;
+    text-align:left;
+    background-color: lightblue;
+} 
+
+.table1 {
+    /* margin: auto; */
+    margin-left: 10px;
+    margin-top: 50px;
+    width: 200px;
+    text-align: center;
+}
+
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    column-width: auto;
+    text-align: center;
+    font-size:large;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
+
+th {
+    padding: 10px;
+    background-color: #5eb696;
+    color: rgb(148, 17, 17);
+    text-decoration: solid;
+}
+
+td {
+    padding: 30px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}

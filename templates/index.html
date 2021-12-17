@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1 style="text-align: center">Patient Database</h1>
+{% endblock %}
+
+{% block body %}
+<div class="content" style="text-align:center;">
+    <h2 style="text-align: center">Details of Patients</h1>
+    {% if records|length < 1 %}
+    <h3 style="text-align: center">There are no patients, you can rest!</h3>
+    {% else %}
+    <div class="tabel1">
+        <table class="center">
+            <tr>
+                <th>Patient id</th>
+                <th>Name of the Patient</th>
+                <th>Reason For visit</th>
+                <th>Date of Appointment</th>
+                <th>Actions</th>
+            </tr>
+            {% for record in records %}
+                <tr>
+                    <td>
+                        {{ record.PatientId}}
+                    </td>
+                    <td>
+                        {{ record.PatientName}}
+                    </td>
+                    <td>
+                        {{ record.Content}}
+                    </td>
+                    <td>
+                        {{ record.date_created.date() }}
+                        <br>
+                        {{record.date_created.strftime("%H:%M") }}
+                    </td>
+                    <td>
+                        <a href="/Delete/{{record.PatientId}}">Delete</a>
+                        <br>
+                        <a href="/Update/{{record.PatientId}}">Update</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+    <h4 style="text-align: center">Add New Patient details here</h4>
+    <form action="/" method="POST" style="text-align: center">
+        <input type="text" name="PatientName" id="PatientName" value="Enter Patient Name" onfocus="this.value=''">
+        <input type="text" name="Content" id="Content" value="Enter Reason For visit" onfocus="this.value=''">
+        <input type="submit" value="SUBMIT">
+    </form>
+
+</div>
+
+{% endblock %}

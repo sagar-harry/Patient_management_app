@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1 style="text-align: center">Patient database</h1>
+{% endblock %}
+
+{% block body %}
+<div class="Contents">
+    <h2 style="text-align: center">Update Patient Details</h1>
+
+    <div class="form">
+        <form action="/Update/{{patient.PatientId}}" method="POST" style="text-align: center">
+            <input type="text" name="PatientName" id="PatientName" value="{{patient.PatientName}}">
+            <input type="text" name="Content" id="Content" value="{{patient.Content}}">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
